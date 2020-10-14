@@ -151,6 +151,15 @@ body {
     float: right;
 }
 
+.week-container {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    width: auto;
+}
+
 .week-list {
     list-style-type: none;
     padding: 0;
@@ -208,26 +217,50 @@ body {
     font-weight: 700;
 }
 
+.alert-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2.5%;
+}
+
+.alert-icon {
+    float: left;
+    padding-right: 0.25em;
+}
+
+.alert-desc {
+    text-transform: capitalize;
+    margin-top: 0.25em;
+    padding-left: 0.25em;
+    float: right;
+}
+
 .location-container {
     padding: 25px 35px;
 }
 
 .location-button {
-    outline: none;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     width: 100%;
     height: 10%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    background-image: var(--gradient);
+    outline: none;
     border: none;
     border-radius: 25px;
-    padding: 10px;
-    font-family: 'Montserrat', sans-serif;
-    background-image: var(--gradient);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     color: #ffffff;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
     -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
             box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
     -webkit-transition: -webkit-transform 200ms ease;
     transition: -webkit-transform 200ms ease;
     -o-transition: transform 200ms ease;
@@ -248,78 +281,77 @@ body {
 }
 
 .location-input-container {
-    position: relative;
-    display: flex;
+    display: none;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    padding-top: 20px;
     width: 100%;
-    border-radius: 25px;
+    height: 10%;
     background-image: var(--gradient);
-    
-  }
-  
-  .location-input {
-    color: #ffffff;
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-    vertical-align: middle;
-    background-color: transparent;
-    border: none;
     outline: none;
-    text-align: center;
-  }
-  .location-input::placeholder {
-      color: #ffffff;
-    }
-  }
-  
-  .send-button {
-    color:  $input-text-inactive;
-    font-size: 2.4rem;
-    line-height: 2.4rem;
-    vertical-align: middle;
-    transition: color .25s;
-    &:hover {
-      color: $input-text-active;
-    }
-  }
-/*
-.location-input-container {
+    border: none;
+    border-radius: 25px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: #ffffff;
+    text-transform: capitalize;
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
-     display: none; 
-    outline: none;
-    margin-top: 20px;;
-    border: none;
-    border-radius: 25px;
-    padding: 10px;
-    background-image: var(--gradient);
-    display: inline;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: -webkit-transform 200ms ease;
+    -o-transition: transform 200ms ease;
+    transition: transform 200ms ease;
+    transition: transform 200ms ease, -webkit-transform 200ms ease;
+  }
+  
+.location-input-container:hover {
+    -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+            transform: scale(0.95);
 }
-
 
 .location-input {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
     color: #ffffff;
-     display: none; 
-    outline: none;
-    border: none;
-    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
     background-color: transparent;
-    font-weight: 700;
-    font-size: 20px;
-}
-
+    border: none;
+    outline: none;
+    text-align: left;
+    text-transform: capitalize;
+  }
 .location-input::placeholder {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    opacity: 50%;
+      display: flex;
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: bold;
+      opacity: 50%;
+      justify-content: center ;
+      align-items: center;
+    }
+
+.send-button:hover {
+      transition: color .25s;
+      color: #73eef2;
+      cursor: pointer;
+    }
+
+.footer {
+    background: #152f4f;
+    color: white;
+    margin-top: 75px;
 }
 
-.send-button {
-    float: right;
+a {
+    color: white;
+    transition: color 0.2s;
 }
 
-*/
+a:hover {
+    text-decoration: none;
+    color: #4180cb;
+}

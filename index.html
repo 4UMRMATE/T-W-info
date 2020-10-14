@@ -1,19 +1,21 @@
 <html>
     <head>
         <title>T-W-info</title>
-        <link rel="icon" href="T-W-info.ico">
-        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon/T-W-info.ico">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
-        <script src="moment.js"></script>
+        <script src="js/moment.js"></script>
     </head>
     <body>
+      <div class="main-container">
         <div class="container">
             <div class="weather-side">
               <div class="weather-gradient"></div>
               <div class="date-container">
-                <h2 class="date-dayname" id="date-dayname">Monday</h2><span class="date-day" id="date-day">2 Sep 1945</span><i class="location-icon" data-feather="map-pin"></i><span class="location" id="location">Paris, FR</span>
+                <h2 class="date-dayname" id="date-dayname">Monday</h2><span class="date-day" id="date-day">2 Sep 1945</span><img class="location-icon" data-feather="map-pin" /><span class="location" id="location">Paris, FR</span>
               </div>
-              <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+              <div class="weather-container">
+                <img class="weather-icon" id="wc" src="icons/unknown.png" />
                 <h1 class="weather-temp" id="weather-temp">0°C</h1>
                 <h3 class="weather-desc" id="weather-desc">Normal</h3>
               </div>
@@ -34,22 +36,34 @@
               </div>
               <div class="week-container">
                 <ul class="week-list">
-                  <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp" id="temp1">29°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span class="day-temp">21°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span class="day-temp">08°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span class="day-temp">19°C</span></li>
+                  <li class="active"><img class="day-icon" src="icons/unknown.png" id="day-icon" /><span class="day-name">Tue</span><span class="day-temp" id="temp1">29°C</span></li>
+                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
                   <div class="clear"></div>
                 </ul>
+                <div class="alert-container">
+                  <i class="alert-icon" data-feather="alert-triangle"></i><span class="alert-desc">current API doesn't support forecast</span>
+                </div>
               </div>
               <div class="location-container">
-                <button class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></button>
-                <div class="location-input-container">
-                    <input class="location-input" type="text" placeholder="Enter a City :" id="textInput">
-                    <button class="send-button" data-feather="send" id="send">
+                <button class="location-button" id="lb"> <i data-feather="map-pin"></i><span>Change location</span></button>
+                <div class="location-input-container" id="lic">
+                    <input class="location-input" type="text" autocomplete="off" placeholder="Enter a City Name:" id="textInput">
+                    <button class="send-button" data-feather="map-pin" id="send-button">
                 </div>   
               </div>
             </div>
         </div>
-        <script src="main.js"></script>
+      
+        <footer class="footer">
+          <p>Author: Mate Sichinava<br>
+          <a href="mailto:sich.mate@gmail.com">sich.mate@gmail.com</a></p>
+          <a href="https://speckyboy.com/css-js-snippets-weather-widgets/">Credits to speckyboy.com for HTML/CSS template</p>
+        </footer>
+      </div>
+        <script src="js/main.js"></script>
     </body>
 </html>
