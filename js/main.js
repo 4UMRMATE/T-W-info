@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=metric`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             let iconId = data['weather'][0]['icon'];
             document.getElementById("wc").attributes[2].value = `icons/`+`${iconId}`+ `-l.png`;
             document.getElementById("day-icon").attributes[1].value = `icons/`+`${iconId}`+ `-d.png`;
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('wind').innerHTML = fixedWindSpeed+" km/h";
         })
         .catch((error) => {
-            console.error('Error:', error);
+            alert('Enter Correct City', error);
         });
     }
 
