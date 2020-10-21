@@ -1,12 +1,15 @@
 feather.replace(); // Feather Icons
 
+let cityImage = document.querySelector(".weather-side").style;
+
 let API = '61fd11eeb0d574f59074a1d50f7cb18d';
 document.addEventListener('DOMContentLoaded', () => {
     let city = "Tbilisi";
+        cityImage.backgroundImage = "url('img/tbilisi.jpg')";
 
-    let locChange = document.getElementById('lb'); // Display Text Input and Vice Versa
-    let enterCityName = document.getElementById('send-button');
-    let textInput = document.getElementById('textInput');
+    let locChange = document.getElementById('lb'),      // Display Text Input and Vice Versa
+        enterCityName = document.getElementById('send-button'),
+        textInput = document.getElementById('textInput');
 
     locChange.addEventListener('click', () => {
         document.getElementById('lic').style.cssText = 'display: flex;';
@@ -19,15 +22,19 @@ document.addEventListener('DOMContentLoaded', () => {
         fetchData();
     });
 
-    document.getElementById("textInput").onkeypress = function(event){
-        city = document.querySelector('#textInput').value;
-        if (event.keyCode == 13 || event.which == 13){
+    let cityTextInput = document.getElementById("textInput")
+    cityTextInput.addEventListener("keydown", function(event){
+        city = document.querySelector("#textInput").value;
+        if (event.key == "Enter"){
             fetchData();
             document.getElementById('lb').style.cssText = 'display: flex;';
             document.getElementById('lic').style.cssText = 'display: none;';
             document.querySelector('#textInput').value = "";
+            city = city.toLowerCase(); // Convert City Name (string) to LowerCase to Find cityBackImage
+            cityImage.backgroundImage = `url('img/${city}.jpg')`;
+            console.log(cityImage.backgroundImage)
         }
-    };
+    }, true);
 
     function fetchData(){
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=metric`)
