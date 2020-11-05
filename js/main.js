@@ -1,11 +1,13 @@
 feather.replace(); // Feather Icons
 
-let cityImage = document.querySelector(".weather-side").style;
+let cityImage = document.getElementById("city-image");
 
-let API = '61fd11eeb0d574f59074a1d50f7cb18d';
+const API = '61fd11eeb0d574f59074a1d50f7cb18d';
+const googleAPI = 'AIzaSyDuwhSSpYmaY4rwOwJv5ACjf2rbyWqxMR8';
+const key = googleAPI;
+
 document.addEventListener('DOMContentLoaded', () => {
     let city = "Tbilisi";
-        cityImage.backgroundImage = "url('img/tbilisi.jpg')";
 
     let locChange = document.getElementById('lb'),      // Display Text Input and Vice Versa
         enterCityName = document.getElementById('send-button'),
@@ -27,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         city = document.querySelector("#textInput").value;
         if (event.key == "Enter"){
             fetchData();
+            fetchImage();
             document.getElementById('lb').style.cssText = 'display: flex;';
             document.getElementById('lic').style.cssText = 'display: none;';
             document.querySelector('#textInput').value = "";
             city = city.toLowerCase(); // Convert City Name (string) to LowerCase to Find cityBackImage
-            cityImage.backgroundImage = `url('img/${city}.jpg')`;
-            console.log(cityImage.backgroundImage)
+            //cityImage.backgroundImage = `url('img/${city}.jpg')`;
         }
     }, true);
 
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("day-icon").attributes[1].value = `icons/`+`${iconId}`+ `-d.png`;
             document.getElementById('date-dayname').innerHTML = moment().format('dddd');
             document.getElementById('date-day').innerHTML = moment().format('ll');
-            document.getElementById('location').innerHTML = data.name+", "+data.sys.country;
+            document.getElementById('location').innerHTML = data.name +", " + data.sys.country;
             let fixedTemp = data.main.temp.toFixed(0); // fix decimal number
             document.getElementById('weather-temp').innerHTML = fixedTemp+"°C";
             document.getElementById('temp1').innerHTML = fixedTemp+"°C";
@@ -58,6 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((error) => {
             alert('Enter Correct City', error);
+        });
+    }
+
+    function fetchImage(){
+        fetch(`https://api.teleport.org/api/urban_areas/slug:${city}/images/`)
+        .then(response => response.json())
+        .then(data => {
+            cityImage.src = data.photos[0].image.mobile;
+        })
+        .catch((error) => {
+            alert(error);
+            cityImage.src = "img/default.jpg";
         });
     }
 

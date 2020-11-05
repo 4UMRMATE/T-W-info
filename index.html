@@ -3,76 +3,103 @@
     <head>
         <title>T-W-info</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="favicon/T-W-info.ico">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/footer.css">
         <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
         <script src="js/moment.js"></script>
     </head>
     <body>
-      <div class="main-container">
-        <div class="container">
-            <div class="weather-side">
-              <div class="weather-gradient"></div>
-              <div class="date-container">
-                <h2 class="date-dayname" id="date-dayname">Monday</h2>
-                <span class="date-day" id="date-day">2 Sep 1945</span>
-                <img class="location-icon" data-feather="map-pin" /><span class="location" id="location">Paris, FR</span>
-              </div>
-              <div class="weather-container">
-                <img class="weather-icon" id="wc" src="icons/unknown.png" />
-                <h1 class="weather-temp" id="weather-temp">0°C</h1>
-                <h3 class="weather-desc" id="weather-desc">Normal</h3>
-              </div>
-            </div>
-            <div class="info-side">
-              <div class="today-info-container">
-                <div class="today-info">
-                  <div class="visibility"> <span class="title">VISIBILITY</span><span class="value" id="visibility">0 km</span>
-                    <div class="clear"></div>
+      <!-- Wrapper -->
+      <div class="wrapper">  
+        <div class="main-container">
+          <div class="container">
+              <div class="weather-side">
+                <div class="weather-content">
+                  <span class="cover"></span>
+                  <div class="weather-view">
+                    <div id="image-gradient">
+                      <img id="city-image" src="img/tbilisi.jpg" alt="city-image">
+                    </div>
                   </div>
-                  <div class="humidity"> <span class="title">HUMIDITY</span><span class="value" id="humidity">0 %</span>
-                    <div class="clear"></div>
+                  <div class="date-container">
+                    <h2 class="date-dayname" id="date-dayname">Monday</h2>
+                    <span class="date-day" id="date-day">2 Sep 1945</span>
+                    <img class="location-icon" data-feather="map-pin"><span class="location" id="location">Paris, FR</span>
                   </div>
-                  <div class="wind"> <span class="title">WIND</span><span class="value" id="wind">0 km/h</span>
-                    <div class="clear"></div>
+                  <div class="weather-container">
+                    <img class="weather-icon" id="wc" src="icons/unknown.png">
+                    <h1 class="weather-temp" id="weather-temp">0°C</h1>
+                    <h3 class="weather-desc" id="weather-desc">Normal</h3>
                   </div>
                 </div>
               </div>
-              <div class="week-container">
-                <ul class="week-list">
-                  <li class="active"><img class="day-icon" src="icons/unknown.png" id="day-icon" /><span class="day-name">Tue</span><span class="day-temp" id="temp1">29°C</span></li>
-                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
-                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
-                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
-                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
-                  <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
-                  <div class="clear"></div>
-                </ul>
-                <div class="alert-container">
-                  <i class="alert-icon" data-feather="alert-triangle"></i><span class="alert-desc">current API doesn't support forecast</span>
+              <div class="info-side">
+                <div class="today-info-container">
+                  <div class="today-info">
+                    <div class="visibility"> <span class="title">VISIBILITY</span><span class="value" id="visibility">0 km</span>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="humidity"> <span class="title">HUMIDITY</span><span class="value" id="humidity">0 %</span>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="wind"> <span class="title">WIND</span><span class="value" id="wind">0 km/h</span>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="week-container">
+                  <ul class="week-list">
+                    <li class="active"><img class="day-icon" src="icons/unknown.png" id="day-icon" /><span class="day-name">Tue</span><span class="day-temp" id="temp1">29°C</span></li>
+                    <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                    <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                    <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                    <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                    <li><img class="day-icon" data-feather="cloud-off" /><span class="day-name">Day</span><span class="day-temp">0°C</span></li>
+                    <div class="clear"></div>
+                  </ul>
+                  <div class="alert-container">
+                    <i class="alert-icon" data-feather="alert-triangle"></i><span class="alert-desc">current API doesn't support forecast</span>
+                  </div>
+                </div>
+                <div class="location-container">
+                  <button class="location-button" id="lb"> <i data-feather="map-pin"></i><span>Change location</span></button>
+                  <div class="location-input-container" id="lic">
+                      <input class="location-input" type="text" autocomplete="off" placeholder="Enter a City Name:" id="textInput">
+                      <button class="send-button" data-feather="map-pin" id="send-button">
+                  </div>   
                 </div>
               </div>
-              <div class="location-container">
-                <button class="location-button" id="lb"> <i data-feather="map-pin"></i><span>Change location</span></button>
-                <div class="location-input-container" id="lic">
-                    <input class="location-input" type="text" autocomplete="off" placeholder="Enter a City Name:" id="textInput">
-                    <button class="send-button" data-feather="map-pin" id="send-button">
-                </div>   
-              </div>
-            </div>
+          </div>
         </div>
-      
-        <footer class="footer">
-          <ul>
-            <li>
-              <p>Author: Mate Sichinava</p>
-            </li>
-            <li>
-              <a href="mailto:sich.mate@gmail.com">sich.mate@gmail.com</a>
-            </li>
-          </ul>
-        </footer>
+  
+        <!-- Footer -->
+        <div class="footer-container">
+          <footer class="footer">
+              <div class="footer-box">
+                <ul class="footer-info links">
+                    <a href="#"><img class="icon" src="footer-ico/FB.png"></a>
+                    <a href="#"><img class="icon" src="footer-ico/YT.png"></a>
+                    <a href="#"><img class="icon" src="footer-ico/TW.png"></a>
+                    <a href="mailto:sich.mate@gmail.com" target="_black">
+                      <img class="icon" src="footer-ico/GM.png">
+                    </a>
+                    <a href="https://www.linkedin.com/in/4UMRMATE" target="_blank">
+                      <img class="icon" src="footer-ico/LN.png">
+                    </a>
+                </ul>
+                <ul class="footer-info">
+                    <li><span>Author: Mate Sichinava</span></li>
+                    <li><a href="mailto:sich.mate@gmail.com" id="a" style="color: silver;">sich.mate@gmail.com</a></li>
+                    <li>&copy Copyright 2020 - </li>
+                </ul>
+              </div>
+          </footer>
+        </div>
+        <!-- End of Footer-->
       </div>
-        <script src="js/main.js"></script>
+      <!-- End of Wrapper -->
+      <script src="js/main.js"></script>
     </body>
 </html>
