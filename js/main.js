@@ -3,8 +3,6 @@ feather.replace(); // Feather Icons
 let cityImage = document.getElementById("city-image");
 
 const API = '61fd11eeb0d574f59074a1d50f7cb18d';
-const googleAPI = 'AIzaSyDuwhSSpYmaY4rwOwJv5ACjf2rbyWqxMR8';
-const key = googleAPI;
 
 document.addEventListener('DOMContentLoaded', () => {
     let city = "Tbilisi";
