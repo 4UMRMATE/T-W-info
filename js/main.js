@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function fetchData() {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
